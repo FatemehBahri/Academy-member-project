@@ -1,11 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GroupProject.Models;
+using Microsoft.EntityFrameworkCore;
 namespace GroupProject.Context
 {
     public class Context : DbContext
     {
         #region DbSet
-
-
+        public virtual DbSet<TeacherModel> Teachers { get; set; }
         #endregion
 
         readonly string _connectionString = "";
