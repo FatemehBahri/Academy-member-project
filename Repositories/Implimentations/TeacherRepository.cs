@@ -26,11 +26,10 @@ namespace GroupProject.Repositories.Implimentations
             return true;
         }
 
-        public bool EditTeacher(TeacherModel teacher, int teacherID)
+        public bool EditTeacher(TeacherModel teacher)
         {
-            TeacherModel editTeacher = GetTeacherInformationByID(teacherID);
-            editTeacher = teacher;
-            _context.Teachers.Update(editTeacher);
+            _context.Teachers.Update(teacher);
+            _context.SaveChanges();
             return true;
         }
 

@@ -7,6 +7,6 @@ namespace GroupProject.Repositories.Interfaces
         bool DeleteTeacherAccountByID(int teacherID);
         List<TeacherModel> GetAllTeachers();
         TeacherModel GetTeacherInformationByID(int teacherID);
-        bool EditTeacher(TeacherModel teacher, int teacherID);
+        bool EditTeacher(TeacherModel teacher);
     }
 }
