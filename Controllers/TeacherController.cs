@@ -8,7 +8,7 @@ namespace GroupProject.Controllers
     public class TeacherController : Controller
     {
         ITeacherRepository _teacherRepository;
-        TeacherController()
+        public TeacherController()
         {
             _teacherRepository = new TeacherRepository();
         }
