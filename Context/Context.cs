@@ -1,10 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GroupProject.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace GroupProject.Context
 {
     public class Context : DbContext
     {
         #region DbSet
 
+        public DbSet<StudentModel> Students { get; set; }
 
         #endregion
 
@@ -12,8 +15,10 @@ namespace GroupProject.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(_connectionString);
+            optionsBuilder.UseSqlServer("Server=BAHRI\\SQLSERVER2022;Database=University_DB;Trusted_Connection=true;TrustServerCertificate=true;");
             base.OnConfiguring(optionsBuilder);
         }
+
+        
     }
 }
