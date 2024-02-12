@@ -12,7 +12,6 @@ namespace GroupProject.Controllers
         {
             _teacherRepository = new TeacherRepository();
         }
-
         #region List Action
         public IActionResult List()
         {
@@ -27,16 +26,9 @@ namespace GroupProject.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(string _teacherFistName, string _teacherLastName, string _teacherNationalCode, string _teacherTeachingArea)
+        public IActionResult Create(TeacherModel teacher)
         {
-            TeacherModel model = new TeacherModel()
-            {
-                teacherFistName = _teacherFistName,
-                teacherLastName = _teacherLastName,
-                teacherNationalCode = _teacherNationalCode,
-                teacherTeachingArea = _teacherTeachingArea
-            };
-            if (_teacherRepository.AddTeacherInformation(model))
+            if (_teacherRepository.AddTeacherInformation(teacher))
             {
                 return RedirectToAction("List");
             }

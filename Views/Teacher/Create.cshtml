@@ -1,1 +1,45 @@
-﻿
+﻿@model TeacherModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Create Teacher Account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/fonts/linearicons/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="inner">
+            <img src="/images/image-1.png" alt="" class="image-1">
+            <form asp-controller="Teacher" asp-action="Create" method="post">
+                <h3>Create New Account</h3>
+                <div class="form-holder">
+                    <span class="lnr lnr-user"></span>
+                    <input asp-for="teacherFistName" type="text" class="form-control" placeholder="Firstname">
+                </div>
+                <div class="form-holder">
+                    <span class="lnr lnr-user"></span>
+                    <input asp-for="teacherLastName" type="text" class="form-control" placeholder="Lastname">
+                </div>
+                <div class="form-holder">
+                    <span class="lnr lnr-highlight"></span>
+                    <input asp-for="teacherNationalCode" type="number" class="form-control" placeholder="NationalCode">
+                </div>
+                <div class="form-holder">
+                    <span class="lnr lnr-graduation-hat"></span>
+                    <input asp-for="teacherTeachingArea" type="text" class="form-control" placeholder="TeachingArea">
+                </div>
+                <button>
+                    <span>Register</span>
+                </button>
+            </form>
+            <img src="/images/image-2.png" alt="" class="image-2">
+        </div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
