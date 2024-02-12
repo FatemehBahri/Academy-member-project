@@ -43,34 +43,19 @@ namespace GroupProject.Controllers
         public IActionResult Edit(int teacherId)
         {
             TeacherModel model = _teacherRepository.GetTeacherInformationByID(teacherId);
+
             return View(model);
         }
         [HttpPost]
-        public IActionResult Edit(string _teacherFistName, string _teacherLastName, string _teacherNationalCode, string _teacherTeachingArea, int _teacherID)
+        public IActionResult Edit(TeacherModel teacher)
         {
-            TeacherModel model = new TeacherModel()
-            {
-                teacherID = _teacherID,
-                teacherFistName = _teacherFistName,
-                teacherLastName = _teacherLastName,
-                teacherNationalCode = _teacherNationalCode,
-                teacherTeachingArea = _teacherTeachingArea
-            };
-            if (_teacherRepository.EditTeacher(model))
+            if (_teacherRepository.EditTeacher(teacher))
             {
                 return RedirectToAction("List");
             }
             else
             {
-                TeacherModel BackModel = new TeacherModel()
-                {
-                    teacherID = _teacherID,
-                    teacherFistName = _teacherFistName,
-                    teacherLastName = _teacherLastName,
-                    teacherNationalCode = _teacherNationalCode,
-                    teacherTeachingArea = _teacherTeachingArea
-                };
-                return View(BackModel);
+                return View(teacher);
             }
         }
         #endregion
