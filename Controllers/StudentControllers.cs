@@ -1,5 +1,5 @@
 ﻿using GroupProject.Models;
-using GroupProject.Repositories.studentinterfaces;
+using GroupProject.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GroupProject.Controllers
