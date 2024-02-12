@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+            background-color: #ACCFFE;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .forms-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+            .form-container:hover {
+                transform: scale(1.05);
+            }
+
+            .form-container img {
+                max-width: 80%;
+                height: auto;
+                size: 150px;
+                border-radius: 50%;
+                margin-bottom: 20px;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            }
+
+        .form-button {
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+            .form-button:hover {
+                background-color: #45a049;
+            }
+    </style>
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="forms-container">
+        <div class="form-container">
+            <img src="images/StudentIcon.png" alt="Student Image">
+            <form action="/student-page" method="post">
+                <button class="form-button" type="submit">Enter the students page</button>
+            </form>
+        </div>
+
+        <div class="form-container">
+            <img src="images/TeacherIcon.png" alt="Teacher Image">
+            <form action="/Teacher/List" method="post">
+                <button class="form-button" type="submit">Enter the teachers page </button>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>
