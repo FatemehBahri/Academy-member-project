@@ -1,28 +1,24 @@
 ﻿using GroupProject.Models;
-using System.Threading.Tasks;
-using GroupProject.Controllers;
-using GroupProject.Context;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using GroupProject.Repositories.Interfaces;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
+using GroupProject.Context;
 
 namespace GroupProject.Repositories.Implimentations
 {
-    public class studentrepositories : IStudentRepository
+    public class Studentrepositories : IStudentRepository
     {
-        private Context.Context db;
-        public studentrepositories(Context.Context context)
-        {
-            db = context;
-        }
+        Context.Context db;
 
-        public object Tasks { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Studentrepositories()
+        {
+            db = new();
+        }
 
         public async Task<bool> Delete(int id)
         {
-            StudentModel StudentModel = new StudentModel();
-
-            db.Remove(StudentModel);
+            var data = db.Students.Find(id);
+            db.Remove(data);
             db.SaveChanges();
 
             return true;
@@ -35,46 +31,26 @@ namespace GroupProject.Repositories.Implimentations
 
         public List<StudentModel> GetAll()
         {
-            return db.Students.ToList();
+            var studentlist = db.Students.ToList();
+            return studentlist;
         }
-        public async Task<bool> Insert(StudentModel model)
+        public async Task<bool> Insert(StudentModel student)
         {
-            StudentModel studentModel = new StudentModel()
-            {
-                StudentID = model.StudentID,
-                studentFristname = model.studentFristname,
-                StudentLastname = model.StudentLastname,
-                Age = model.Age,
-                phonenumber = model.phonenumber,
-                Email = model.Email,
-            };
-
-            db.Students.Add(studentModel);
-            db.SaveChanges();
-
-            return true;
+            
+                db.Students.Add(student);
+                db.SaveChanges();
+                return true;
         }
 
-        public async Task<bool> Update(StudentModel model)
+        public async Task<bool> Update(StudentModel student)
         {
-            StudentModel StudentModel = new StudentModel();
-            StudentModel.StudentID = model.StudentID;
-            StudentModel.studentFristname = model.studentFristname;
-            StudentModel.StudentLastname = model.StudentLastname;
-            StudentModel.Age = model.Age;
-            StudentModel.phonenumber = model.phonenumber;
-            StudentModel.Email = model.Email;
-
-
-
-
-            db.Students.Add(StudentModel);
+            db.Students.Update(student);
             db.SaveChanges();
             return true;
+
         }
-
-
 
     }
-
 }
+
+
