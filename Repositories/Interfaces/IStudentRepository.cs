@@ -5,12 +5,10 @@ namespace GroupProject.Repositories.Interfaces
 {
     public interface IStudentRepository
     {
-        object Tasks { get; set; }
-
         Task<StudentModel> Get(int id);
         List<StudentModel> GetAll();
         Task<bool> Delete(int id);
-        Task<bool> Update(StudentModel model);
-        Task<bool> Insert(StudentModel model);
+        Task<bool> Update(StudentModel student);
+        Task<bool> Insert(StudentModel student);
     }
 }
