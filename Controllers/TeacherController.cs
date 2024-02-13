@@ -15,8 +15,8 @@ namespace GroupProject.Controllers
         #region List Action
         public IActionResult List()
         {
-            // List<TeacherModel> model = _teacherRepository.GetAllTeachers();
-            return View();
+            List<TeacherModel> model = _teacherRepository.GetAllTeachers();
+            return View(model);
         }
         #endregion
 

@@ -1,7 +1,7 @@
 ﻿@model List<TeacherModel>
 <html>
 <style>
-    body {     
+    body {
         background-color: #ACCFFE;
         font-family: 'Arial', sans-serif;
     }
@@ -9,20 +9,41 @@
 <head>
     <title>Teachers List</title>
 </head>
-<body >
-<main>
-    <div class="table-response">
-        <table class="table table-dark">
-            <tr>
-                <th>ID</th>
-                <th>FistName</th>
-                <th>LastName</th>
-                <th>NationalCode</th>
-                <th>TeachingArea</th>
-                <th>Operation</th>
-            </tr>
-        </table>
-    </div>
-</main>
+<body>
+    <a href="/Teacher/Create" class="btn btn-success mb-3">
+        New Account
+    </a>
+    <main>
+        <div class="table-response">
+            <table class="table table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>FistName</th>
+                    <th>LastName</th>
+                    <th>NationalCode</th>
+                    <th>TeachingArea</th>
+                    <th>Operation</th>
+                </tr>
+                @foreach (var Item in Model)
+                {
+                    <tr>
+                        <td>@Item.teacherID</td>
+                        <td>@Item.teacherFistName</td>
+                        <td>@Item.teacherLastName</td>
+                        <td>@Item.teacherNationalCode</td>
+                        <td>@Item.teacherTeachingArea</td>
+                        <td>
+                            <a href="/Teacher/Delete/@Item.teacherID" class="btn btn-danger" style="margin-right:7px; font:menu; margin-top:-5px">
+                                Remove account
+                            </a>
+                            <a href="/Teacher/Edit/@Item.teacherID" class="btn btn-warning" style= "font:menu; margin-top:-5px">
+                                Edit account
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </main>
 </body>
 </html>
