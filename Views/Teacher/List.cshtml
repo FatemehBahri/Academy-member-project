@@ -1,15 +1,10 @@
-﻿@model List<TeacherModel>
+﻿@{
+    Layout = "_Layout";
+}
+@model List<TeacherModel>
 <html>
-<style>
-    body {
-        background-color: #ACCFFE;
-        font-family: 'Arial', sans-serif;
-    }
-</style>
-<head>
-    <title>Teachers List</title>
-</head>
-<body>
+<body style="background-color:#ACCFFE">
+  
     <a href="/Teacher/Create" class="btn btn-success mb-3">
         New Account
     </a>
@@ -33,10 +28,10 @@
                         <td>@Item.teacherNationalCode</td>
                         <td>@Item.teacherTeachingArea</td>
                         <td>
-                            <a href="/Teacher/Delete/@Item.teacherID" class="btn btn-danger" style="margin-right:7px; font:menu; margin-top:-5px">
+                            <a href="/Teacher/Delete/@Item.teacherID" name="ID" class="btn btn-danger" style="margin-right:7px; font:menu; margin-top:-5px">
                                 Remove account
                             </a>
-                            <a href="/Teacher/Edit/@Item.teacherID" class="btn btn-warning" style= "font:menu; margin-top:-5px">
+                            <a href="/Teacher/Edit/@Item.teacherID"  class="btn btn-warning" style="font:menu; margin-top:-5px">
                                 Edit account
                             </a>
                         </td>

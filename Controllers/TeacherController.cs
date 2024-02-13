@@ -40,12 +40,12 @@ namespace GroupProject.Controllers
         #endregion
 
         #region Edit Action
-        public IActionResult Edit(int teacherId)
+        public IActionResult Edit(int ID)
         {
-            TeacherModel model = _teacherRepository.GetTeacherInformationByID(teacherId);
-
+            TeacherModel model = _teacherRepository.GetTeacherInformationByID(ID);
             return View(model);
         }
+
         [HttpPost]
         public IActionResult Edit(TeacherModel teacher)
         {
@@ -61,9 +61,9 @@ namespace GroupProject.Controllers
         #endregion
 
         #region Delete Action
-        public IActionResult Delete(int _teacherId)
+        public IActionResult Delete(int ID)
         {
-            _teacherRepository.DeleteTeacherAccountByID(_teacherId);
+            _teacherRepository.DeleteTeacherAccountByID(ID);
             return RedirectToAction("List");
         }
         #endregion

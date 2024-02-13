@@ -1,40 +1,39 @@
 ﻿@model TeacherModel
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
-    <title>Create Teacher Account</title>
+    <title>E Teacher Account</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/fonts/linearicons/style.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
-
     <div class="wrapper">
         <div class="inner">
-            <img src="/images/image-1.png" alt="" class="image-1">
-            <input type="hidden" value="@Model.teacherID" name="id" />
+            <img src="/images/image-1.png" alt="" class="image-1">        
             <form asp-controller="Teacher" asp-action="Edit" method="post">
-                <h3>Edit ypu Account</h3>
+                <input type="hidden" value="@Model.teacherID" asp-for="teacherID" />
+                <h3>Edit your Account</h3>                
                 <div class="form-holder">
                     <span class="lnr lnr-user"></span>
-                    <input asp-for="teacherFistName" value="@Model.teacherFistName" type="text" class="form-control" placeholder="Firstname">
+                    <input asp-for="teacherFistName" value="@Model.teacherFistName" name="teacherFistName" type="text" class="form-control" placeholder="Firstname">
                 </div>
                 <div class="form-holder">
                     <span class="lnr lnr-user"></span>
-                    <input asp-for="teacherLastName" value="@Model.teacherLastName" type="text" class="form-control" placeholder="Lastname">
+                    <input asp-for="teacherLastName" value="@Model.teacherLastName" name="teacherLastName" type="text" class="form-control" placeholder="Lastname">
                 </div>
                 <div class="form-holder">
                     <span class="lnr lnr-highlight"></span>
-                    <input asp-for="teacherNationalCode" value="@Model.teacherNationalCode" type="number" class="form-control" placeholder="NationalCode">
+                    <input asp-for="teacherNationalCode" value="@Model.teacherNationalCode" name="teacherNationalCode" type="number" class="form-control" placeholder="NationalCode">
                 </div>
                 <div class="form-holder">
                     <span class="lnr lnr-graduation-hat"></span>
-                    <input asp-for="teacherTeachingArea" value="@Model.teacherTeachingArea" type="text" class="form-control" placeholder="TeachingArea">
+                    <input asp-for="teacherTeachingArea" value="@Model.teacherTeachingArea" name="teacherTeachingArea" type="text" class="form-control" placeholder="TeachingArea">
                 </div>
                 <button>
-                    <span>Register</span>
+                    <span>edit information</span>
                 </button>
             </form>
             <img src="/images/image-2.png" alt="" class="image-2">

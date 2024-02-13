@@ -20,8 +20,8 @@ namespace GroupProject.Repositories.Implimentations
 
         public bool DeleteTeacherAccountByID(int teacherID)
         {
-            TeacherModel deleteTeacher = GetTeacherInformationByID(teacherID);
-            _context.Teachers.Remove(deleteTeacher);
+            TeacherModel deleteTeacherModel = GetTeacherInformationByID(teacherID);
+            _context.Teachers.Remove(deleteTeacherModel);
             _context.SaveChanges();
             return true;
         }
