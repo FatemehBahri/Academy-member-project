@@ -10,7 +10,8 @@ namespace GroupProject.Context
         public virtual DbSet<TeacherModel> Teachers { get; set; }
 
         #endregion
-        readonly string _connectionString = "Server=BAHRI\\SQLSERVER2022;Database=University_DB;Trusted_Connection=true;TrustServerCertificate=true;";
+        //readonly string _connectionString = "Data Source=.;Initial Catalog=GroupProjectDb;Integrated Security=True;Trust Server Certificate=True";
+        readonly string _connectionString = "Data Source=94.74.145.28,2022;Initial Catalog=plussumc_MyDataBase;Persist Security Info=True;User ID=plussumc_MyDataBase;Password=Abdolreza1378;TrustServerCertificate=True";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
