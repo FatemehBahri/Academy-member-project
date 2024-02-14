@@ -1,4 +1,7 @@
-﻿@model StudentModel
+﻿@{
+    Layout = "_Layout";
+}
+@model StudentModel
 
 <form asp-controller="Student" asp-action="Edit" method="post">
         <input type="hidden" asp-for="StudentID" />

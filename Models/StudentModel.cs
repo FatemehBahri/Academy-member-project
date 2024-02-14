@@ -9,7 +9,7 @@ namespace GroupProject.Models
         public string studentFristname { get; set; }
         public string StudentLastname { get; set; }
         public int Age { get; set; }
-        public int phonenumber { get; set; }
+        public string phonenumber { get; set; }
         public string Email { get; set; }
 
 

@@ -1,5 +1,4 @@
 ﻿using GroupProject.Models;
-using System.Threading.Tasks;
 
 namespace GroupProject.Repositories.Interfaces
 {

@@ -20,7 +20,7 @@ namespace GroupProject.Controllers
         }
 
         // GET: StudentController/Create
-       public ActionResult Create()
+        public ActionResult Create()
         {
             return View();
         }
@@ -79,9 +79,9 @@ namespace GroupProject.Controllers
         }
         // POST: StudentController/Delete/5
         [HttpPost]
-        public async Task<IActionResult>Delete(StudentModel StudentModel)
+        public async Task<IActionResult> Delete(StudentModel StudentModel)
         {
-            bool resalt=await _studentRepository.Delete(StudentModel.StudentID);
+            bool resalt = await _studentRepository.Delete(StudentModel.StudentID);
             return RedirectToAction("List", "Student");
         }
     }

@@ -1,4 +1,7 @@
-﻿@model List<StudentModel>
+﻿@{
+    Layout = "_Layout";
+}
+@model List<StudentModel>
 
 <main>
     <div class="table-response">
@@ -21,9 +24,9 @@
                         <th scope="row">@item.StudentID</th>
                         <td>@item.studentFristname</td>
                         <td>@item.StudentLastname</td>
-                        <td>@item.Age</td>
                         <td>@item.phonenumber</td>
                         <td>@item.Email</td>
+                        <td>@item.Age</td>
                         <td>
                             <a href="/Student/Delete/@item.StudentID"><button type="button" class="btn btn-danger">Delete</button></a>
                             <a href="/Student/Edit/@item.StudentID"><button type="button" class="btn btn-warning">Edit</button></a>
