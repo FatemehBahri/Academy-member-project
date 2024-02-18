@@ -1,8 +1,6 @@
 ﻿using GroupProject.Models;
-using Microsoft.EntityFrameworkCore;
 using GroupProject.Repositories.Interfaces;
-using GroupProject.Context;
-
+using Microsoft.EntityFrameworkCore;
 namespace GroupProject.Repositories.Implimentations
 {
     public class Studentrepositories : IStudentRepository
@@ -30,15 +28,15 @@ namespace GroupProject.Repositories.Implimentations
 
         public List<StudentModel> GetAll()
         {
-            var studentlist = db.Students.ToList();
+            List<StudentModel> studentlist = db.Students.ToList();
             return studentlist;
         }
         public async Task<bool> Insert(StudentModel student)
         {
-            
-                db.Students.Add(student);
-                db.SaveChanges();
-                return true;
+
+            db.Students.Add(student);
+            db.SaveChanges();
+            return true;
         }
 
         public async Task<bool> Update(StudentModel student)
