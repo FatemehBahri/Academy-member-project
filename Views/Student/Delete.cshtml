@@ -1,9 +1,7 @@
-﻿@{
+﻿@model StudentModel
+@{
     Layout = "_Layout";
 }
-@model StudentModel
-
-
 <form asp-controller="Student" asp-action="Delete" method="post">
     <input type="hidden" asp-for="StudentID" />
     <h3 class="text-danger">Are you sure you want to delete @Model.studentFristname @Model.StudentLastname ?</h3>

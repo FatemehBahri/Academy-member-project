@@ -1,29 +1,33 @@
-﻿@{
+﻿@model StudentModel
+@{
     Layout = "_Layout";
 }
-@model StudentModel
+<form asp-controller="Student" asp-action="Create" class="row g-3 needs-validation" method="post">
+        <div class="mb-3">
+            <label asp-for="studentFristname" class="form-label">studentFristname</label>
+            <input type="text" class="form-control" asp-for="studentFristname">
+        <span class="text-danger" asp-validation-for="studentFristname"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="StudentLastname" class="form-label">StudentLastname</label>
+            <input type="text" class="form-control" asp-for="StudentLastname">
+        <span class="text-danger" asp-validation-for="StudentLastname"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Age" class="form-label">Age</label>
+            <input type="number" class="form-control" asp-for="Age">
+        <span class="text-danger" asp-validation-for="Age"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="phonenumber" class="form-label">phonenumber</label>
+            <input type="tel" class="form-control" asp-for="phonenumber">
+        <span class="text-danger" asp-validation-for="phonenumber"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Email</label>
+            <input type="email" class="form-control" asp-for="Email">
+        <span class="text-danger" asp-validation-for="Email"></span>
+        </div>
 
-<form asp-controller="Student" asp-action="Create" method="post">
-    <div class="mb-3">
-        <label asp-for="studentFristname" class="form-label">studentFristname</label>
-        <input type="text" class="form-control" asp-for="studentFristname">
-    </div>
-    <div class="mb-3">
-        <label asp-for="StudentLastname" class="form-label">StudentLastname</label>
-        <input type="text" class="form-control" asp-for="StudentLastname">
-    </div>
-    <div class="mb-3">
-        <label asp-for="Age" class="form-label">Age</label>
-        <input type="number" class="form-control" asp-for="Age">
-    </div>
-    <div class="mb-3">
-        <label asp-for="phonenumber" class="form-label">phonenumber</label>
-        <input type="tel" class="form-control" asp-for="phonenumber">
-    </div>
-    <div class="mb-3">
-        <label asp-for="Email" class="form-label">Email</label>
-        <input type="email" class="form-control" asp-for="Email">
-    </div>
-
-    <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success">Submit</button>
 </form>
