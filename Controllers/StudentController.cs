@@ -20,24 +20,22 @@ namespace GroupProject.Controllers
         }
 
         // GET: StudentController/Create
-        public ActionResult Create()
+       public ActionResult Create()
         {
             return View();
         }
 
         // POST: StudentController/Create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(StudentModel StudentModel)
         {
-            bool result = await _studentRepository.Insert(StudentModel);
-            if (result)
+            if (ModelState.IsValid)
             {
+                bool result = await _studentRepository.Insert(StudentModel);
                 return RedirectToAction("List", "Student");
             }
-            else
-            {
-                return View();
-            }
+            return View();
         }
 
         // GET: StudentController/Edit/5
@@ -48,28 +46,26 @@ namespace GroupProject.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(StudentModel StudentModel, StudentModel studentModel)
         {
-            bool result = await _studentRepository.Update(StudentModel);
-            if (result)
+            if (ModelState.IsValid)
             {
+                bool result = await _studentRepository.Update(StudentModel);
                 return RedirectToAction("List", "Student");
             }
-            else
+            StudentModel model = new StudentModel()
             {
-                StudentModel model = new StudentModel()
-                {
-                    StudentID = StudentModel.StudentID,
-                    studentFristname = StudentModel.StudentLastname,
-                    StudentLastname = StudentModel.StudentLastname,
-                    Age = StudentModel.Age,
-                    Email = StudentModel.Email,
-                    phonenumber = StudentModel.phonenumber
+                StudentID = StudentModel.StudentID,
+                studentFristname = StudentModel.StudentLastname,
+                StudentLastname = StudentModel.StudentLastname,
+                Age = StudentModel.Age,
+                Email = StudentModel.Email,
+                phonenumber = StudentModel.phonenumber
 
-                };
+            };
 
-                return View(studentModel);
-            }
+            return View(studentModel);
         }
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
@@ -79,9 +75,9 @@ namespace GroupProject.Controllers
         }
         // POST: StudentController/Delete/5
         [HttpPost]
-        public async Task<IActionResult> Delete(StudentModel StudentModel)
+        public async Task<IActionResult>Delete(StudentModel StudentModel)
         {
-            bool resalt = await _studentRepository.Delete(StudentModel.StudentID);
+            bool resalt=await _studentRepository.Delete(StudentModel.StudentID);
             return RedirectToAction("List", "Student");
         }
     }
