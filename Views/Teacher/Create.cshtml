@@ -16,19 +16,19 @@
                 <h3> New Account</h3>
                 <div class="form-holder">
                     <span class="lnr lnr-user"></span>
-                    <input asp-for="teacherFistName" type="text" class="form-control" placeholder="Firstname">
+                    <input asp-for="teacherFistName" type="text" required class="form-control" placeholder="Firstname">
                 </div>
                 <div class="form-holder">
                     <span class="lnr lnr-user"></span>
-                    <input asp-for="teacherLastName" type="text" class="form-control" placeholder="Lastname">
+                    <input asp-for="teacherLastName" type="text" required class="form-control" placeholder="Lastname">
                 </div>
                 <div class="form-holder">
                     <span class="lnr lnr-highlight"></span>
-                    <input asp-for="teacherNationalCode" type="number" class="form-control" placeholder="NationalCode">
+                    <input asp-for="teacherNationalCode" required type="number" class="form-control" placeholder="NationalCode">
                 </div>
                 <div class="form-holder">
                     <span class="lnr lnr-graduation-hat"></span>
-                    <input asp-for="teacherTeachingArea" type="text" class="form-control" placeholder="TeachingArea">
+                    <input asp-for="teacherTeachingArea" type="text" required class="form-control" placeholder="TeachingArea">
                 </div>
                 <button>
                     <span>Register</span>

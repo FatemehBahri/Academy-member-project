@@ -18,19 +18,19 @@
                 <h3>Edit your Account</h3>                
                 <div class="form-holder">
                     <span class="lnr lnr-user"></span>
-                    <input asp-for="teacherFistName" value="@Model.teacherFistName" name="teacherFistName" type="text" class="form-control" placeholder="Firstname">
+                    <input asp-for="teacherFistName" required value="@Model.teacherFistName" name="teacherFistName" type="text" class="form-control" placeholder="Firstname">
                 </div>
                 <div class="form-holder">
                     <span class="lnr lnr-user"></span>
-                    <input asp-for="teacherLastName" value="@Model.teacherLastName" name="teacherLastName" type="text" class="form-control" placeholder="Lastname">
+                    <input asp-for="teacherLastName" required value="@Model.teacherLastName" name="teacherLastName" type="text" class="form-control" placeholder="Lastname">
                 </div>
                 <div class="form-holder">
                     <span class="lnr lnr-highlight"></span>
-                    <input asp-for="teacherNationalCode" value="@Model.teacherNationalCode" name="teacherNationalCode" type="number" class="form-control" placeholder="NationalCode">
+                    <input asp-for="teacherNationalCode" required value="@Model.teacherNationalCode" name="teacherNationalCode" type="number" class="form-control" placeholder="NationalCode">
                 </div>
                 <div class="form-holder">
                     <span class="lnr lnr-graduation-hat"></span>
-                    <input asp-for="teacherTeachingArea" value="@Model.teacherTeachingArea" name="teacherTeachingArea" type="text" class="form-control" placeholder="TeachingArea">
+                    <input asp-for="teacherTeachingArea" required value="@Model.teacherTeachingArea" name="teacherTeachingArea" type="text" class="form-control" placeholder="TeachingArea">
                 </div>
                 <button>
                     <span>edit information</span>
